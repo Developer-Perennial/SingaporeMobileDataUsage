@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 protocol BaseViewModel: class {
     func doSomethingOnViewDidLoad()
     func getScreenTitle() -> String
@@ -37,8 +36,13 @@ protocol DataUsageViewModelInputProtocol: BaseViewModel {
 class DataUsageViewModel
 {
     weak var delegate: DataUsageViewModelOutputProtocol?
+    
+    private var dataProvider : DataProviderServiceProtocol
     private var yearlyDataUsage = [YearlyDataUsage]()
-    private var nwService = DataUsageNetworkService()
+    
+    init(dataProvider : DataProviderServiceProtocol) {
+        self.dataProvider = dataProvider
+    }
     
     public func assignYearlyData(dataUsageRecords : [Records]?)
     {
@@ -86,52 +90,49 @@ class DataUsageViewModel
 extension DataUsageViewModel : DataUsageViewModelInputProtocol
 {
     func doSomethingOnViewDidLoad() {
-        
-        delegate?.showActivityIndicator()
+        self.delegate?.showActivityIndicator()
         let requestDTO = DataUsageRequestDTO(resourceId: Configuration.resourceID, limit: 500)
-        
-        let param = Helper.getJSONObject(obj:requestDTO)
-        nwService.request(url: ApiPath.MOBILE_DATA_USAGE, method: .get, parameters: param, headers: [:], uRLEncoding: .default) { (result: Result<DataUsageResponseDTO, APIError>) in
+        dataProvider.getDataUsageInfo(requestDTO: requestDTO) { result in
             self.delegate?.dismissActivityIndicator()
-
-            switch result {
-            case .success(let model):
-                self.assignYearlyData(dataUsageRecords: model.result?.records)
+            switch(result)
+            {
+            case .success(let records):
+                self.assignYearlyData(dataUsageRecords: records)
                 self.delegate?.presentData()
             case .failure(let error):
                 self.delegate?.showError(message: error.localizedDescription)
             }
         }
     }
-        
-        func getScreenTitle() -> String {
-            return "Data Usage"
-        }
-        
-        func getNumberOfSection() -> Int {
-            return 1
-        }
-        
-        func getNumberOfRow() -> Int {
-            return yearlyDataUsage.count
-        }
-        func getHeaderData() -> (String,String){
-            return ("Year","Total data Usage")
-        }
-        
-        func yearlyData(index: Int) -> (String, String, String?) {
-            let yearlyInfo = yearlyDataUsage[index]
-            let dataUsage = String(format: "%.6f", yearlyInfo.usedData ?? 0.0)
-            return (yearlyInfo.name!,dataUsage,"This year data Usage get decrease")
-        }
-        func getImageStatus(index: Int) -> (Bool,Bool) {
-            let yearlyInfo = yearlyDataUsage[index]
-            return (yearlyInfo.isDecresedData,yearlyInfo.isMessageVisiable)
-        }
-        
-        func changeImageStatus(section: Int,row : Int)
-        {
-            yearlyDataUsage[row].changeMessageVisiableStatus()
-            delegate?.reloadImageViewCell(section: section, row: row)
-        }
+    
+    func getScreenTitle() -> String {
+        return "Data Usage"
+    }
+    
+    func getNumberOfSection() -> Int {
+        return 1
+    }
+    
+    func getNumberOfRow() -> Int {
+        return yearlyDataUsage.count
+    }
+    func getHeaderData() -> (String,String){
+        return ("Year","Total data Usage")
+    }
+    
+    func yearlyData(index: Int) -> (String, String, String?) {
+        let yearlyInfo = yearlyDataUsage[index]
+        let dataUsage = String(format: "%.6f", yearlyInfo.usedData ?? 0.0)
+        return (yearlyInfo.name!,dataUsage,"This year data Usage get decrease")
+    }
+    func getImageStatus(index: Int) -> (Bool,Bool) {
+        let yearlyInfo = yearlyDataUsage[index]
+        return (yearlyInfo.isDecresedData,yearlyInfo.isMessageVisiable)
+    }
+    
+    func changeImageStatus(section: Int,row : Int)
+    {
+        yearlyDataUsage[row].changeMessageVisiableStatus()
+        delegate?.reloadImageViewCell(section: section, row: row)
+    }
 }

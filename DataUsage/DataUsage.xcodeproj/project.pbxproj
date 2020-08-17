@@ -30,6 +30,14 @@
 		9BFE323324EA9C0400233F4C /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE323224EA9C0400233F4C /* Records.swift */; };
 		9BFE323524EA9D9000233F4C /* DataUsageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE323424EA9D9000233F4C /* DataUsageResponseDTO.swift */; };
 		9BFE323824EAA77300233F4C /* HelperUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE323724EAA77300233F4C /* HelperUtility.swift */; };
+		9BFE323B24EAAE9500233F4C /* DataUsageDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE323A24EAAE9500233F4C /* DataUsageDBService.swift */; };
+		9BFE323D24EAAEA300233F4C /* DataBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE323C24EAAEA300233F4C /* DataBaseHandler.swift */; };
+		9BFE324024EAAEE600233F4C /* DataUsage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE323E24EAAEE600233F4C /* DataUsage.xcdatamodeld */; };
+		9BFE324424EAAF9700233F4C /* QuarterEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE324224EAAF9700233F4C /* QuarterEntity+CoreDataClass.swift */; };
+		9BFE324524EAAF9700233F4C /* QuarterEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE324324EAAF9700233F4C /* QuarterEntity+CoreDataProperties.swift */; };
+		9BFE324824EAB12900233F4C /* DataUsageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE324624EAB01600233F4C /* DataUsageDataProvider.swift */; };
+		9BFE324B24EAB15D00233F4C /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE324A24EAB15D00233F4C /* ViewModelFactory.swift */; };
+		9BFE324E24EAB32600233F4C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE324D24EAB32600233F4C /* UIViewController.swift */; };
 		F5588B3EDAC8D109751D4449 /* Pods_DataUsage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CC62A950E4D32C791662E8 /* Pods_DataUsage.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +68,14 @@
 		9BFE323224EA9C0400233F4C /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		9BFE323424EA9D9000233F4C /* DataUsageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsageResponseDTO.swift; sourceTree = "<group>"; };
 		9BFE323724EAA77300233F4C /* HelperUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperUtility.swift; sourceTree = "<group>"; };
+		9BFE323A24EAAE9500233F4C /* DataUsageDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsageDBService.swift; sourceTree = "<group>"; };
+		9BFE323C24EAAEA300233F4C /* DataBaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseHandler.swift; sourceTree = "<group>"; };
+		9BFE323F24EAAEE600233F4C /* DataUsage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataUsage.xcdatamodel; sourceTree = "<group>"; };
+		9BFE324224EAAF9700233F4C /* QuarterEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuarterEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BFE324324EAAF9700233F4C /* QuarterEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuarterEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BFE324624EAB01600233F4C /* DataUsageDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsageDataProvider.swift; sourceTree = "<group>"; };
+		9BFE324A24EAB15D00233F4C /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		9BFE324D24EAB32600233F4C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B00BD12627275AA0D522A29D /* Pods-DataUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataUsage.debug.xcconfig"; path = "Target Support Files/Pods-DataUsage/Pods-DataUsage.debug.xcconfig"; sourceTree = "<group>"; };
 		B9CC62A950E4D32C791662E8 /* Pods_DataUsage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataUsage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +122,8 @@
 		9BFE31F024EA5CA200233F4C /* DataUsage */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE324C24EAB30F00233F4C /* Extension */,
+				9BFE324924EAB14400233F4C /* Factory */,
 				9BFE323624EAA75C00233F4C /* Helper */,
 				9BFE322424EA9ADD00233F4C /* Configuration */,
 				9BFE321724EA983A00233F4C /* Services */,
@@ -142,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9BFE31FA24EA5CA700233F4C /* Assets.xcassets */,
+				9BFE323E24EAAEE600233F4C /* DataUsage.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -176,7 +195,9 @@
 		9BFE321724EA983A00233F4C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE323924EAAE0100233F4C /* Database */,
 				9BFE321824EA984D00233F4C /* Network */,
+				9BFE324624EAB01600233F4C /* DataUsageDataProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +265,41 @@
 				9BFE323724EAA77300233F4C /* HelperUtility.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		9BFE323924EAAE0100233F4C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE324124EAAF3300233F4C /* Models */,
+				9BFE323A24EAAE9500233F4C /* DataUsageDBService.swift */,
+				9BFE323C24EAAEA300233F4C /* DataBaseHandler.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		9BFE324124EAAF3300233F4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE324224EAAF9700233F4C /* QuarterEntity+CoreDataClass.swift */,
+				9BFE324324EAAF9700233F4C /* QuarterEntity+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9BFE324924EAB14400233F4C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE324A24EAB15D00233F4C /* ViewModelFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		9BFE324C24EAB30F00233F4C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE324D24EAB32600233F4C /* UIViewController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E66D4BEA1CF0E92EB0B2F8AF /* Frameworks */ = {
@@ -371,13 +427,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFE323B24EAAE9500233F4C /* DataUsageDBService.swift in Sources */,
+				9BFE324524EAAF9700233F4C /* QuarterEntity+CoreDataProperties.swift in Sources */,
 				9BFE323824EAA77300233F4C /* HelperUtility.swift in Sources */,
+				9BFE324B24EAB15D00233F4C /* ViewModelFactory.swift in Sources */,
 				9BFE323524EA9D9000233F4C /* DataUsageResponseDTO.swift in Sources */,
 				9BFE320A24EA604800233F4C /* DataUsageViewController.swift in Sources */,
 				9BFE321D24EA995800233F4C /* DataUsageRequestDTO.swift in Sources */,
 				9BFE31F224EA5CA200233F4C /* AppDelegate.swift in Sources */,
 				9BFE322324EA9A5900233F4C /* DataUsageNetworkService.swift in Sources */,
+				9BFE323D24EAAEA300233F4C /* DataBaseHandler.swift in Sources */,
 				9BFE321624EA691D00233F4C /* SectionHeaderView.swift in Sources */,
+				9BFE324824EAB12900233F4C /* DataUsageDataProvider.swift in Sources */,
 				9BFE323124EA9BF200233F4C /* ResultData.swift in Sources */,
 				9BFE320C24EA60EE00233F4C /* DataUsageViewModel.swift in Sources */,
 				9BFE322B24EA9B6800233F4C /* Fields.swift in Sources */,
@@ -386,9 +447,12 @@
 				9BFE323324EA9C0400233F4C /* Records.swift in Sources */,
 				9BFE322624EA9AF200233F4C /* Configuration.swift in Sources */,
 				9BFE320F24EA67A600233F4C /* DataUsageTableViewCell.swift in Sources */,
+				9BFE324E24EAB32600233F4C /* UIViewController.swift in Sources */,
 				9BFE322F24EA9BA900233F4C /* Links.swift in Sources */,
 				9BFE321F24EA999700233F4C /* APIError.swift in Sources */,
 				9BFE322124EA99CA00233F4C /* Alamofire+Codable.swift in Sources */,
+				9BFE324024EAAEE600233F4C /* DataUsage.xcdatamodeld in Sources */,
+				9BFE324424EAAF9700233F4C /* QuarterEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +652,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9BFE323E24EAAEE600233F4C /* DataUsage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BFE323F24EAAEE600233F4C /* DataUsage.xcdatamodel */,
+			);
+			currentVersion = 9BFE323F24EAAEE600233F4C /* DataUsage.xcdatamodel */;
+			path = DataUsage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9BFE31E624EA5CA200233F4C /* Project object */;
 }

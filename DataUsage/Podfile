@@ -7,5 +7,6 @@ target 'DataUsage' do
 
   # Pods for DataUsage
     pod 'Alamofire', '~> 5.2'
+    pod 'IHProgressHUD'
 
 end

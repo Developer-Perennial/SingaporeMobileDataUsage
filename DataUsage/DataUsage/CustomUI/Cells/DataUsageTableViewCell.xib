@@ -22,8 +22,13 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="hKC-GT-Z4J">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="64"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WS7-VO-6xw">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="64"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.right.fill" catalog="system" highlightedImage="arrowtriangle.down.fill" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WS7-VO-6xw">
+                                        <rect key="frame" x="10" y="24" width="20" height="15.5"/>
+                                        <color key="tintColor" red="0.60659542423380286" green="0.64185782591408447" blue="0.30855415885633802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="UY0-Vz-n6Z"/>
+                                            <constraint firstAttribute="height" constant="20" id="eVf-QT-W2I"/>
+                                        </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5b-QC-tLX">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="64"/>
@@ -34,19 +39,17 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="WS7-VO-6xw" firstAttribute="centerY" secondItem="hKC-GT-Z4J" secondAttribute="centerY" id="3KM-uF-dcx"/>
                                     <constraint firstAttribute="height" constant="64" id="A08-WA-nBK"/>
                                     <constraint firstAttribute="trailing" secondItem="B5b-QC-tLX" secondAttribute="trailing" id="BJ3-HY-Lzn"/>
                                     <constraint firstAttribute="bottom" secondItem="B5b-QC-tLX" secondAttribute="bottom" id="DdM-CO-AkG"/>
-                                    <constraint firstItem="WS7-VO-6xw" firstAttribute="top" secondItem="hKC-GT-Z4J" secondAttribute="top" id="I2G-OE-kvL"/>
                                     <constraint firstItem="B5b-QC-tLX" firstAttribute="top" secondItem="hKC-GT-Z4J" secondAttribute="top" id="IzM-9i-akJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="WS7-VO-6xw" secondAttribute="bottom" id="WWb-VJ-7MM"/>
-                                    <constraint firstAttribute="trailing" secondItem="WS7-VO-6xw" secondAttribute="trailing" id="d31-zq-DHz"/>
+                                    <constraint firstItem="WS7-VO-6xw" firstAttribute="centerX" secondItem="hKC-GT-Z4J" secondAttribute="centerX" id="Rve-TZ-i8J"/>
                                     <constraint firstAttribute="width" constant="40" id="lOc-nc-SZj"/>
                                     <constraint firstItem="B5b-QC-tLX" firstAttribute="leading" secondItem="hKC-GT-Z4J" secondAttribute="leading" id="ud7-wU-bRg"/>
-                                    <constraint firstItem="WS7-VO-6xw" firstAttribute="leading" secondItem="hKC-GT-Z4J" secondAttribute="leading" id="xgd-2l-esO"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6IX-ed-YTB">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6IX-ed-YTB">
                                 <rect key="frame" x="40" y="0.0" width="260" height="64"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f8D-Pu-71o">
@@ -70,7 +73,10 @@
                                         </subviews>
                                     </stackView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu6-2G-APV">
-                                        <rect key="frame" x="0.0" y="64" width="260" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="64" width="260" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="qMK-Y2-UsR"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -110,4 +116,8 @@
             <point key="canvasLocation" x="63.768115942028992" y="24.776785714285712"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="124"/>
+        <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

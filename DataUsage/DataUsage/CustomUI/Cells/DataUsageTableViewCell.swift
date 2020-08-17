@@ -37,6 +37,7 @@ class DataUsageTableViewCell: UITableViewCell {
     {
         imageContainerView.isHidden = !isClickable
         lblMessage.isHidden = !isExpanded
+        arrowimageView.isHighlighted = isExpanded
     }
 
     @IBAction func imageViewClicked(_ sender: Any) {

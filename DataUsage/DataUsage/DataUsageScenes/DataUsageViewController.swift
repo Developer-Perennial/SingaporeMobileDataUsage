@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHProgressHUD
 
 struct NibNames
 {
@@ -18,7 +19,7 @@ class DataUsageViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel : DataUsageViewModelInputProtocol = DataUsageViewModel()
+    var viewModel : DataUsageViewModelInputProtocol = ViewModelFactory.getViewModel(type: ViewModelType.dataUsage) as! DataUsageViewModelInputProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,14 +82,17 @@ extension DataUsageViewController : DataUsageViewModelOutputProtocol
     }
     
     func showError(message: String) {
-
+        showAlert(message: message)
     }
     
     func showActivityIndicator() {
+        IHProgressHUD.show()
     }
     
     func dismissActivityIndicator() {
-        
+        DispatchQueue.main.async {
+            IHProgressHUD.dismiss()
+        }
     }
     
     func reloadImageViewCell(section: Int, row: Int) {
