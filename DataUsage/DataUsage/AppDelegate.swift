@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DataUsage
 //
-//  Created by Pere-Dev on 17/08/20.
+//  Created by Pere-Devon 17/08/20.
 //  Copyright © 2020 Perennial System. All rights reserved.
 //
 
